@@ -22,9 +22,11 @@
         <service android:name=".MusicService" />
         <receiver android:name=".NotificationReceiver" >
             <intent-filter >
+                
                 <action android:name="com.example.consultants.week3day3.play" />
                 <action android:name="com.example.consultants.week3day3.pause" />
                 <action android:name="com.example.consultants.week3day3.stop" />
+
             </intent-filter>
         </receiver>
     </application>

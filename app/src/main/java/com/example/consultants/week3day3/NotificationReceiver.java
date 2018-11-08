@@ -17,7 +17,7 @@ public class NotificationReceiver extends BroadcastReceiver {
                 Toast.makeText(context, "Pause", Toast.LENGTH_SHORT).show();
                 break;
             case MusicService.NOTIFY_STOP:
-                Toast.makeText(context, "Stop", Toast.LENGTH_SHORT).show();
+                context.stopService(intent);
                 break;
         }
 
