@@ -26,26 +26,39 @@ public class MusicService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        RemoteViews expandedView = new RemoteViews(getPackageName(), R.layout.notification);
+        switch (intent.getAction())
+        {
+            case NOTIFY_PLAY:
+                RemoteViews expandedView = new RemoteViews(getPackageName(), R.layout.notification);
 
-        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.frenchjazz);
-        mediaPlayer.start();
+                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.frenchjazz);
+                mediaPlayer.start();
 
-        Intent intentNotify = new Intent(this, MainActivity.class);
-        PendingIntent pendingIntent = PendingIntent.getActivity(this,
-                0, intentNotify, 0);
+                Intent intentNotify = new Intent(this, MainActivity.class);
+                PendingIntent pendingIntent = PendingIntent.getActivity(this,
+                        0, intentNotify, 0);
 
-        Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
-                .setContentTitle("Music Player")
-                .setContentText("Play/Pause/Stop Music")
-                .setSmallIcon(R.drawable.ic_music_note)
-                .setContentIntent(pendingIntent)
-                .setCustomBigContentView(expandedView)
-                .build();
+                Notification notification = new NotificationCompat.Builder(this, CHANNEL_ID)
+                        .setContentTitle("Music Player")
+                        .setContentText("Play/Pause/Stop Music")
+                        .setSmallIcon(R.drawable.ic_music_note)
+                        .setContentIntent(pendingIntent)
+                        .setCustomBigContentView(expandedView)
+                        .build();
 
-        setListeners(expandedView, this);
+                setListeners(expandedView, this);
 
-        startForeground(1, notification);
+                startForeground(1, notification);
+
+                break;
+            case NOTIFY_PAUSE:
+                mediaPlayer.pause();
+                break;
+            case NOTIFY_STOP:
+                stopForeground(true);
+                stopSelf();
+                break;
+        }
 
         return START_NOT_STICKY;
     }

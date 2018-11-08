@@ -40,10 +40,12 @@ public class MainActivity extends AppCompatActivity {
         switch (view.getId())
         {
             case R.id.btnStart:
+                intent.setAction(MusicService.NOTIFY_PLAY);
                 startService(intent);
                 break;
             case R.id.btnStop:
-                stopService(intent);
+                intent.setAction(MusicService.NOTIFY_STOP);
+                startService(intent);
                 break;
         }
     }

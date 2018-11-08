@@ -8,16 +8,20 @@ import android.widget.Toast;
 public class NotificationReceiver extends BroadcastReceiver {
     @Override
     public void onReceive(Context context, Intent intent) {
+        Intent returnIntent = new Intent(context, MusicService.class);
         switch (intent.getAction())
         {
             case MusicService.NOTIFY_PLAY:
-                Toast.makeText(context, "Play", Toast.LENGTH_SHORT).show();
+                returnIntent.setAction(MusicService.NOTIFY_PLAY);
+                context.startService(returnIntent);
                 break;
             case MusicService.NOTIFY_PAUSE:
-                Toast.makeText(context, "Pause", Toast.LENGTH_SHORT).show();
+                returnIntent.setAction(MusicService.NOTIFY_PAUSE);
+                context.startService(returnIntent);
                 break;
             case MusicService.NOTIFY_STOP:
-                context.stopService(intent);
+                returnIntent.setAction(MusicService.NOTIFY_STOP);
+                context.startService(returnIntent);
                 break;
         }
 
