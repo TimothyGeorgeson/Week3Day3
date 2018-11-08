@@ -31,7 +31,10 @@ public class MusicService extends Service {
             case NOTIFY_PLAY:
                 RemoteViews expandedView = new RemoteViews(getPackageName(), R.layout.notification);
 
-                mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.frenchjazz);
+                if (mediaPlayer == null)
+                {
+                    mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.frenchjazz);
+                }
                 mediaPlayer.start();
 
                 Intent intentNotify = new Intent(this, MainActivity.class);
