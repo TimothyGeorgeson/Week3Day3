@@ -10,4 +10,4 @@ Screenshots:
 
 ![image](https://user-images.githubusercontent.com/44408528/48307152-f6f29600-e514-11e8-9ca0-980db6d2f28e.png)
 
-![image](https://user-images.githubusercontent.com/44408528/48177420-751b2680-e2e2-11e8-9b40-dab54aa40fe4.png)
+![image](https://user-images.githubusercontent.com/44408528/48307167-3de08b80-e515-11e8-8e87-27a57d460b90.png)
