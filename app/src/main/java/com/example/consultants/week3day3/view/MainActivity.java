@@ -1,4 +1,4 @@
-package com.example.consultants.week3day3;
+package com.example.consultants.week3day3.view;
 
 import android.content.Intent;
 import android.content.IntentFilter;
@@ -7,6 +7,11 @@ import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import com.example.consultants.week3day3.NotificationReceiver;
+import com.example.consultants.week3day3.R;
+import com.example.consultants.week3day3.model.PersonGenerator;
+import com.example.consultants.week3day3.service.MusicService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -19,9 +24,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        rvList = findViewById(R.id.rvList);
-        layoutManager = new LinearLayoutManager(this);
-        rvList.setLayoutManager(layoutManager);
     }
 
     @Override
@@ -64,5 +66,10 @@ public class MainActivity extends AppCompatActivity {
 
     public void showList(View view) {
 
+        rvList = findViewById(R.id.rvList);
+        layoutManager = new LinearLayoutManager(this);
+        rvList.setLayoutManager(layoutManager);
+        adapter = new MyAdapter(PersonGenerator.generate(20));
+        rvList.setAdapter(adapter);
     }
 }

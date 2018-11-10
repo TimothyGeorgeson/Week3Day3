@@ -12,14 +12,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity android:name=".view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <service android:name=".MusicService" />
+        <service android:name=".service.MusicService" />
         <receiver android:name=".NotificationReceiver" >
             <!--<intent-filter >-->
                 <!--<action android:name="com.example.consultants.week3day3.play" />-->

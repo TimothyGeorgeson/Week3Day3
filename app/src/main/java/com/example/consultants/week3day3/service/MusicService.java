@@ -1,4 +1,4 @@
-package com.example.consultants.week3day3;
+package com.example.consultants.week3day3.service;
 
 import android.app.Notification;
 import android.app.PendingIntent;
@@ -10,6 +10,9 @@ import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 import android.widget.RemoteViews;
+
+import com.example.consultants.week3day3.view.MainActivity;
+import com.example.consultants.week3day3.R;
 
 import static com.example.consultants.week3day3.App.CHANNEL_ID;
 
