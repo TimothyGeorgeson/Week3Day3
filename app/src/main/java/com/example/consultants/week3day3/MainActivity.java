@@ -4,16 +4,24 @@ import android.content.Intent;
 import android.content.IntentFilter;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 public class MainActivity extends AppCompatActivity {
 
     private NotificationReceiver notificationReceiver;
+    private RecyclerView rvList;
+    private RecyclerView.Adapter adapter;
+    private RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        rvList = findViewById(R.id.rvList);
+        layoutManager = new LinearLayoutManager(this);
+        rvList.setLayoutManager(layoutManager);
     }
 
     @Override
@@ -43,10 +51,18 @@ public class MainActivity extends AppCompatActivity {
                 intent.setAction(MusicService.NOTIFY_PLAY);
                 startService(intent);
                 break;
+            case R.id.btnPause:
+                intent.setAction(MusicService.NOTIFY_PAUSE);
+                startService(intent);
+                break;
             case R.id.btnStop:
                 intent.setAction(MusicService.NOTIFY_STOP);
                 startService(intent);
                 break;
         }
+    }
+
+    public void showList(View view) {
+
     }
 }
