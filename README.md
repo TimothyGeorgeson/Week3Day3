@@ -8,6 +8,6 @@ Assignment Instructions:
 
 Screenshots:
 
-![image](https://user-images.githubusercontent.com/44408528/48177431-86fcc980-e2e2-11e8-9c7f-7048d49f93d6.png)
+![image](https://user-images.githubusercontent.com/44408528/48307152-f6f29600-e514-11e8-9ca0-980db6d2f28e.png)
 
 ![image](https://user-images.githubusercontent.com/44408528/48177420-751b2680-e2e2-11e8-9b40-dab54aa40fe4.png)
