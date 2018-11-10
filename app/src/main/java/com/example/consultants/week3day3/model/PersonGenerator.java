@@ -10,8 +10,8 @@ import java.util.Random;
 
 public class PersonGenerator {
 
-    public static List<Person> generate(int count){
-        List<Person> personList = new ArrayList<>();
+    public static ArrayList<Person> generate(int count){
+        ArrayList<Person> personList = new ArrayList<>();
 
         for (int i = 0; i < count; i++) {
             personList.add(new Person(getRandomImage(), getRandomName(), getRandomAge(), getRandomGender()));
