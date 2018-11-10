@@ -12,6 +12,7 @@ import com.example.consultants.week3day3.NotificationReceiver;
 import com.example.consultants.week3day3.R;
 import com.example.consultants.week3day3.model.PersonGenerator;
 import com.example.consultants.week3day3.service.MusicService;
+import com.example.consultants.week3day3.service.MyIntentService;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -65,6 +66,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void showList(View view) {
+
+//        Intent intent = new Intent(getApplicationContext(), MyIntentService.class);
+//        intent.putExtra()
 
         rvList = findViewById(R.id.rvList);
         layoutManager = new LinearLayoutManager(this);
