@@ -23,6 +23,9 @@
             android:exported="false"/>
         <service android:name=".service.MyIntentService"
             android:exported="false" />
+        <service android:name=".service.MyBoundService"
+            android:process=":newprocess"
+            android:exported="false" />
     </application>
 
 </manifest>

@@ -5,9 +5,10 @@ import android.content.Intent;
 import android.os.IBinder;
 import android.os.Messenger;
 import android.support.annotation.Nullable;
+import android.util.Log;
 
 public class MyBoundService extends Service {
-
+    public static final String TAG = MyBoundService.class.getSimpleName() + "_TAG";
     public final static String ID = "ID";
 
     private RequestHandler requestHandler;
@@ -19,6 +20,8 @@ public class MyBoundService extends Service {
 
         requestHandler = new RequestHandler(this);
         messenger = new Messenger(requestHandler);
+
+        Log.d(TAG, "onCreate: MyBoundService");
     }
 
     @Nullable

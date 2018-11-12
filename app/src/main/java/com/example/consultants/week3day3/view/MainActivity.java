@@ -20,6 +20,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.consultants.week3day3.R;
 import com.example.consultants.week3day3.model.Person;
@@ -121,11 +122,15 @@ public class MainActivity extends AppCompatActivity {
                     bindService(new Intent(this, MyBoundService.class),
                             svcConn,
                             Context.BIND_AUTO_CREATE);
+
+                    Toast.makeText(this, "Bound", Toast.LENGTH_SHORT).show();
                 }
 
                 break;
             case R.id.btnUnbind:
                     unbindService(svcConn);
+                    reqMessenger = null;
+                Toast.makeText(this, "Unbound", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.btnGetData:
                 Message request = Message.obtain();
@@ -137,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
                     } catch (RemoteException e) {
                         e.printStackTrace();
                     }
+                }
+                else
+                {
+                    Toast.makeText(this, "Service Not Bound", Toast.LENGTH_SHORT).show();
                 }
 
                 break;
