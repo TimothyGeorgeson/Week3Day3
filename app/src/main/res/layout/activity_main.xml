@@ -11,6 +11,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Music Player"
+        android:textColor="@android:color/black"
         android:textSize="25sp" />
 
     <LinearLayout
@@ -44,14 +45,58 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="RecyclerView"
+        android:text="Bound Service"
+        android:textColor="@android:color/black"
+        android:textSize="25sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:onClick="onClickBoundService"
+            android:id="@+id/btnBind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Bind" />
+
+        <Button
+            android:onClick="onClickBoundService"
+            android:id="@+id/btnUnbind"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unbind" />
+
+        <Button
+            android:onClick="onClickBoundService"
+            android:id="@+id/btnGetData"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Get Data" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvBoundService"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Data From Service: "
+        android:textSize="22sp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Recycler View"
+        android:textColor="@android:color/black"
         android:textSize="25sp" />
 
     <Button
-        android:onClick="showList"
-        android:text="Show List"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:onClick="showList"
+        android:text="Show List" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvList"
